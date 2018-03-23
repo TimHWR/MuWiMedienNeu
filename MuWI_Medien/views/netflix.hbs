@@ -1,0 +1,24 @@
+﻿<div class="card-body">
+    <div class="flex-container">
+        <div class="items">
+            {{#each itemList}}
+            {{{this}}}
+            {{/each}}
+            <!--<img class="image" src="http://localhost:1337/image/%2E%2Fuploads%2FimageSample.jpg" />-->
+            <section><a href="http://pbs.twimg.com/profile_images/916254721274515458/72vChEJI_400x400.jpg" download="72vChEJI_400x400.jpg"><span>Download</span><span>PDF</span></a></section>
+        </div>
+        <div id="left" class="button-overlay left">◀</div>
+        <div id="right" class="button-overlay right">▶</div>
+    </div>
+    <script>
+        $("#right").click(function () {
+            var currentLeft = parseInt($('.items').css('left'));
+            $('.items').css('left', (currentLeft - 800) + 'px');
+        })
+
+        $('#left').click(function () {
+            var currentLeft = parseInt($('.items').css('left'));
+            $('.items').css('left', (currentLeft + 800) + 'px');
+        })
+    </script>
+</div>

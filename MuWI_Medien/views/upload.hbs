@@ -1,0 +1,21 @@
+﻿<form class="fileupload" action="uploadFile" method="post" enctype="multipart/form-data">
+    <h1>Upload File Here</h1>
+    <input id="fileselect" type="file" name="upfile" value="">
+    <input type="submit" onclick="didUpload()" />
+    <br />
+    <br />
+    <textarea name="comment" cols="35" rows="4">Comment...</textarea>
+    <br />
+    <br />
+    <textarea style="resize:none; overflow-y:scroll;" cols="50" rows="5" id="ausgabefeld"></textarea>
+</form>
+<br />
+<br />
+<input type="button" value="Anzeigen" onclick="location.href='./viewAllElements'"/>
+<script type="text/javascript">
+        function didUpload() {
+            var file = document.getElementById("fileselect");
+            var ausgabe = document.getElementById("ausgabefeld");
+            ausgabe.innerHTML = ausgabe.innerHTML + file.files.item(0).name+" hochgeladen.\n"
+        }
+</script>
